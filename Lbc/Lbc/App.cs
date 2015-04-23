@@ -42,8 +42,8 @@ namespace Lbc {
                         Device.BeginInvokeOnMainThread(() => this.MainPage.DisplayAlert("未知错误", "发生了未知错误。", "OK"));
                         break;
                 }
-            } else {
-                this.MainPage.DisplayAlert("错误", "发生错误，无法连接到服务器", "OK");
+            } else if (e.HasError) {
+                Device.BeginInvokeOnMainThread(() => this.MainPage.DisplayAlert("错误", "发生错误，无法连接到服务器", "OK"));
             }
         }
 

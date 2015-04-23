@@ -67,10 +67,10 @@
     <Compile Include="Pages\TemplatesListPage.xaml.cs">
       <DependentUpon>TemplatesListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PropertiesHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ILifeCycle.cs" />
     <Compile Include="Services\IStorage.cs" />
-    <Compile Include="PropertiesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\LoginPage.xaml">

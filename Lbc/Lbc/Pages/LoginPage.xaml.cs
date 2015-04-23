@@ -26,11 +26,25 @@ namespace Lbc.Pages {
             set;
         }
 
+        private int BlackBtnClickCount = 0;
+
         public LoginPage() {
             InitializeComponent();
             this.Account = PropertiesHelper.Get<string>("Account");
             this.Pwd = PropertiesHelper.Get<string>("Pwd");
             this.BindingContext = this;
+        }
+
+
+        protected override bool OnBackButtonPressed() {
+            Task.Delay(1000).ContinueWith(t => {
+                this.BlackBtnClickCount = 0;
+            });
+            if (++this.BlackBtnClickCount == 2) {
+                DependencyService.Get<ILifeCycle>().Exit();
+                return false;
+            } else
+                return true;
         }
 
         public async void Login(object sender, EventArgs e) {

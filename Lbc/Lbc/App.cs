@@ -1,6 +1,7 @@
 ﻿using Lbc.Pages;
 using Lbc.WebApi;
 using System.Net;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -41,11 +42,14 @@ namespace Lbc {
                         Device.BeginInvokeOnMainThread(() => this.MainPage.DisplayAlert("未知错误", "发生了未知错误。", "OK"));
                         break;
                 }
+            } else {
+                this.MainPage.DisplayAlert("错误", "发生错误，无法连接到服务器", "OK");
             }
         }
 
         private void ShowLogin() {
-            if (!((NavigationPage)this.MainPage).CurrentPage.GetType().Equals(typeof(LoginPage))) {
+            //栈，后进先出
+            if (this.MainPage.Navigation.ModalStack.Count == 0 || !this.MainPage.Navigation.ModalStack.Last().GetType().Equals(typeof(LoginPage))) {
                 Device.BeginInvokeOnMainThread(() => {
                     this.MainPage.Navigation.PushModalAsync(new LoginPage());
                 });

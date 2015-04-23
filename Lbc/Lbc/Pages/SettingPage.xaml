@@ -4,6 +4,16 @@
              x:Class="Lbc.Pages.SettingPage"
              Title="设置"
              >
-  
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+
+    <Label Text="{Binding Token.Account}" />
+    <Button Text="注销" Clicked="SignOut" Grid.Row="1" />
+  </Grid>
+
 </ContentPage>

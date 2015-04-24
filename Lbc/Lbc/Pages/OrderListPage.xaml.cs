@@ -43,6 +43,8 @@ namespace Lbc.Pages {
             this.Appearing += OrderListPage_Appearing;
 
             this.BindingContext = this;
+
+            //this.ToolbarItems.Add(new ToolbarItem());
         }
 
 

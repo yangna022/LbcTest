@@ -4,7 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 
 namespace Lbc.Droid {
-    [Activity(Label = "Lbc", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Lbc", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, UiOptions = UiOptions.SplitActionBarWhenNarrow)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity {
         protected override void OnCreate(Bundle bundle) {
             base.OnCreate(bundle);

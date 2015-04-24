@@ -89,7 +89,7 @@
         <DataTemplate>
           <ViewCell>
             <ViewCell.View>
-              <StackLayout Orientation="Horizontal" BackgroundColor="#EEEEEE" Padding="10,5">
+              <StackLayout Orientation="Horizontal" BackgroundColor="#EEEEEE" Padding="5,10">
                 <BoxView Color="Green" WidthRequest="10" HeightRequest="20" VerticalOptions="Center" />
                 <Label Text="{Binding Title}" VerticalOptions="Center" />
               </StackLayout>
@@ -101,20 +101,20 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <Grid Padding="5">
+            <Grid RowSpacing="5" ColumnSpacing="10">
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="80" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition />
               </Grid.ColumnDefinitions>
               <Grid.RowDefinitions>
                 <RowDefinition />
-                <RowDefinition Height="1" />
+                <RowDefinition Height="auto"  />
               </Grid.RowDefinitions>
 
-              <Label Text="{Binding Key}" FontAttributes="Bold" />
+              <Label Text="{Binding Key}" FontAttributes="Bold" VerticalOptions="Center" />
               <BoxView Color="#CCCCCC" WidthRequest="2" HeightRequest="15" VerticalOptions="Center" Grid.Column="1" />
-              <Label Text="{Binding Value}" Grid.Column="2" />
+              <Label Text="{Binding Value}" Grid.Column="2" VerticalOptions="Center" />
 
               <BoxView Color="#CCCCCC" HeightRequest="1" Grid.Row="1" Grid.ColumnSpan="3">
                 <BoxView.IsVisible>

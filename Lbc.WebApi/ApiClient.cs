@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Lbc.WebApi {
     public class ApiClient {
-        public static readonly string BaseUrl = "http://192.168.0.50:8001/api/v1/framework";
+        public static readonly string BaseUrl = "http://api.lbc.tunnel.mobi/api/v1/framework";
 
         public static event EventHandler<ApiExecutedEventArgs> OnMethodExecuted;
 

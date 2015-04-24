@@ -20,7 +20,10 @@
                     
                     <DataTemplate x:Key="TabbedPageHeader1">
                         <StackPanel>
-                            <TextBlock Text="{Binding Title}" FontSize="30" Foreground="Green" HorizontalAlignment="Center" />
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" />
+                                <TextBlock Text="{Binding Title}" FontSize="30" Foreground="Green" HorizontalAlignment="Center" />
+                            </StackPanel>
                             <Rectangle Height="2" Fill="Red" Visibility="{Binding IsEnabled,Converter={StaticResource boolCvt}}" />
                         </StackPanel>
                     </DataTemplate>

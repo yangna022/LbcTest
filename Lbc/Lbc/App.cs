@@ -10,7 +10,10 @@ namespace Lbc {
         public App() {
             this.InitApiClient();
             this.InitializeComponent();
-            this.MainPage = new NavigationPage(new MainPage());
+            this.MainPage = new NavigationPage(new BusPage()) {
+                //BarTextColor = Color.Green,
+                //BarBackgroundColor = Color.FromHex("DDDDDD")
+            };
         }
 
         private void InitApiClient() {

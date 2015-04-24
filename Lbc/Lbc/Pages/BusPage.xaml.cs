@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 
 namespace Lbc.Pages {
-    public partial class MainPage : TabbedPage {
+    public partial class BusPage : TabbedPage {
 
         public List<Page> Pages = new List<Page>() {
             new OrderListPage(),
@@ -12,7 +12,7 @@ namespace Lbc.Pages {
             new SettingPage()
         };
 
-        public MainPage() {
+        public BusPage() {
             //InitializeComponent();
             //this.ItemsSource = this.Pages;
             this.BackgroundColor = Color.FromHex("DDDDDD");//在XAML中设置 Background 不起作用。

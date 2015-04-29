@@ -3,6 +3,7 @@ using Lbc.WebApi.Modes;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using XXY.LBC.Consign.WebApi.Dtos;
 
 namespace Lbc.WebApi.Methods {
     public class GetConsignInfo : MethodBase<ConsignDto> {

@@ -5,6 +5,8 @@ using PropertyChanged;
 using System;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
+using XXY.LBC.Consign.WebApi.Dtos;
+using System.Linq;
 
 namespace Lbc.Pages {
 
@@ -121,7 +123,7 @@ namespace Lbc.Pages {
                         this.Datas.Add(d);
                     }
 
-                if (datas.Items.Count > 0)
+                if (datas.Items.Count() > 0)
                     this.PageIdx++;
             }
         }

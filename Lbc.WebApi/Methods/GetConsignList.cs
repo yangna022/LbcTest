@@ -4,9 +4,11 @@ using Lbc.WebApi.Modes;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using XXY.LBC.Consign.WebApi.Dtos;
+using XXY.WebApi.Core.Objects;
 
 namespace Lbc.WebApi.Methods {
-    public class GetConsignList : MethodBase<PagedResult<ShortConsignDto>> {
+    public class GetConsignList : MethodBase<ApiPagePackage<ShortConsignDto>> {
         public override string MethodName {
             get {
                 return "Consign/GetConsignList";

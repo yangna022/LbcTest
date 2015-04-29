@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 namespace Lbc.WebApi.Methods {
     public class GetToken : MethodBase<Token> {
 
+
+        public override bool SupportProtoBuf {
+            get {
+                return false;
+            }
+        }
+
         public override string MethodName {
             get {
                 return "token";

@@ -7,6 +7,7 @@ using PropertyChanged;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using Lbc;
+using XXY.LBC.Consign.WebApi.Dtos;
 
 namespace Lbc.Pages {
 

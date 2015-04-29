@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using Xamarin.Forms;
+using XXY.LBC.Consign.WebApi.Dtos;
 
 namespace Lbc.Converters {
     public class LocConverter : IValueConverter {

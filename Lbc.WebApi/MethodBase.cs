@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Lbc.WebApi {
 
     public abstract class MethodBase {
+
+        public virtual bool SupportProtoBuf {
+            get {
+                return true;
+            }
+        }
 
         public bool HasError {
             get;
@@ -42,6 +49,9 @@ namespace Lbc.WebApi {
 
             if (this.Invoke != null) {
                 using (var client = new OAuthHttpClient(token)) {
+                    if (this.SupportProtoBuf)
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-protobuf"));
+
                     return await this.Invoke.Invoke(client, url);
                 }
             }
@@ -60,7 +70,11 @@ namespace Lbc.WebApi {
                 if (a.IsSuccessStatusCode) {
                     //var str = await a.Content.ReadAsStringAsync();
                     //var o = JsonConvert.DeserializeObject<T>(str);
-                    return await a.Content.ReadAsAsync<T>();
+
+                    if (this.SupportProtoBuf) {
+                        return await a.Content.ReadAsAsync<T>(new[] { new ProtoBufFormatter() });
+                    } else
+                        return await a.Content.ReadAsAsync<T>();
                 } else {
                     reason = a.ReasonPhrase;
                     status = a.StatusCode;

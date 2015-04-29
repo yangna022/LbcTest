@@ -99,6 +99,12 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=1.4.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.1.6349\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="XXY.LBC.Consign.WebApi.Dtos.PCL">
+      <HintPath>..\..\dll\XXY.LBC.Consign.WebApi.Dtos.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="XXY.WebApi.Core.Objects">
+      <HintPath>..\..\dll\XXY.WebApi.Core.Objects.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
